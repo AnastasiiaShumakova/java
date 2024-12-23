@@ -6,7 +6,7 @@ import java.sql.SQLException;
 
 public class DatabaseConnection {
 
-    private static final String URL = "jdbc:sqlite:C:\\Users\\Анастасия\\AppData\\Roaming\\DBeaverData\\workspace6\\.metadata\\sample-database-sqlite-1\\Chinook.db";
+    private static final String URL = "jdbc:sqlite:C:\\Users\\Шумакова\\AppData\\Roaming\\DBeaverData\\workspace6\\.metadata\\sample-database-sqlite-1\\Chinook.db";
     private static final String USER = "myuser";
     private static final String PASSWORD = "sa";
 
