@@ -38,12 +38,6 @@ public class UserService {
         return userDAO.findAll();
     }
 
-    public void deleteUser(int id) throws SQLException {
-        if (userDAO.findById(id) == null) {
-            throw new IllegalArgumentException("Пользователь не найден");
-        }
-        userDAO.delete(id);
-    }
 
     public void updateUser(int id, String newName, String newEmail) throws SQLException {
         User existingUser = userDAO.findById(id);
@@ -56,6 +50,13 @@ public class UserService {
         existingUser.setName(newName);
         existingUser.setEmail(newEmail);
         userDAO.update(existingUser);
+    }
+    
+    public void deleteUser(int id) throws SQLException {
+        if (userDAO.findById(id) == null) {
+            throw new IllegalArgumentException("Пользователь не найден");
+        }
+        userDAO.delete(id);
     }
 }
 
