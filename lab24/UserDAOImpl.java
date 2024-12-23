@@ -45,6 +45,17 @@ public class UserDAOImpl implements UserDAO {
         return users;
     }
 
+
+    @Override
+    public void delete(int id) throws SQLException {
+        String sql = "DELETE FROM users WHERE id = ?";
+        try (Connection conn = DatabaseConnection.getConnection();
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+            stmt.setInt(1, id);
+            stmt.executeUpdate();
+        }
+    }
+
     @Override
     public void update(User user) throws SQLException {
         String sql = "UPDATE users SET name = ?, email = ? WHERE id = ?";
@@ -53,16 +64,6 @@ public class UserDAOImpl implements UserDAO {
             stmt.setString(1, user.getName());
             stmt.setString(2, user.getEmail());
             stmt.setInt(3, user.getId());
-            stmt.executeUpdate();
-        }
-    }
-
-    @Override
-    public void delete(int id) throws SQLException {
-        String sql = "DELETE FROM users WHERE id = ?";
-        try (Connection conn = DatabaseConnection.getConnection();
-             PreparedStatement stmt = conn.prepareStatement(sql)) {
-            stmt.setInt(1, id);
             stmt.executeUpdate();
         }
     }
