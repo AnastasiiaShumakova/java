@@ -3,11 +3,6 @@ package org.knit.lab24;
 import java.sql.*;
 import java.util.Scanner;
 
-// Реализовать консольное приложение, которое:
-// Позволяет пользователю вводить команды для добавления, удаления, просмотра и обновления пользователей.
-// Использует паттерн DAO для работы с базой данных.
-// Реализует бизнес-логику в классе UserService.
-
 public class Task24 {
     public static void main(String[] args) throws SQLException {
 
